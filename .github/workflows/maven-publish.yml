@@ -27,12 +27,7 @@ jobs:
 
     - name: Build with Maven
       #run: mvn -B package --file pom.xml
-      run: mvn archetype:generate \
-          -DgroupId=com.baeldung \
-          -DartifactId=baeldung \
-          -DarchetypeArtifactId=maven-archetype-quickstart \
-          -DarchetypeVersion=1.4 \
-          -DinteractiveMode=false
+      run: mvn compile
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
